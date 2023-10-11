@@ -20,4 +20,5 @@ Route::get('/', function () {
 });
 
 /* Ruta usando controlador */
-Route::get('/crear-cuenta', [RegisterController::class, 'crear']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
