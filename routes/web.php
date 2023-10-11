@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -8,15 +9,15 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
+| routes are loaded by the RouteService Provider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
 */
 
+/* Ruta usando closure*/
 Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/crear-cuenta', function () {
-    return view('/auth.register');
-});
+/* Ruta usando controlador */
+Route::get('/crear-cuenta', [RegisterController::class, 'crear']);
