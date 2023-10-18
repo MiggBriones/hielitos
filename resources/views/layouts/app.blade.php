@@ -11,11 +11,22 @@
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">
             <div class="container mx-auto flex justify-between items-container">
-                <h1 class="text-3xl font-black">
-                    Hielitos
-                </h1>
+                @guest
+                    <h1 class="text-3xl font-black">
+                        Hielitos
+                    </h1>
+                @endguest
                 
                 @auth
+                    <nav class="text-3xl font-black">
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">
+                            Crear cuenta
+                        </a>
+                        <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="#">
+                            Clientes
+                        </a>
+                    </nav>    
+
                     <nav class="flex gap-2 items-center">
                         <a class="font-bold text-gray-600 text-sm" href="#">
                             Hola:
@@ -30,13 +41,13 @@
                             </button>
                         </form>
                     </nav>
+
                 @endauth
 
                 @guest
                     <nav class="flex gap-2 items-center">
-                        <a class="font-bold uppercase text-gray-600 text-sm" href=" {{ route('login') }} ">Login</a>
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">
-                            Crear cuenta
+                        <a class="font-bold uppercase text-gray-600 text-sm" href=" {{ route('login') }} ">
+                            Login
                         </a>
                     </nav>
                 @endguest
@@ -47,7 +58,10 @@
             <h2 class="font-black text-center text-3xl mb-10">
                 @yield('titulo')
             </h2>
-            @yield('contenido')
+
+            <div class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
+                @yield('contenido')
+            </div>
         </main>
         <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
             <h1>Hielitos - Todos los derechos reservados {{ now()->year }} </h1>
