@@ -22,7 +22,7 @@
                         <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">
                             Crear cuenta
                         </a>
-                        <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="#">
+                        <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="{{ route('client') }}">
                             Clientes
                         </a>
                     </nav>    
