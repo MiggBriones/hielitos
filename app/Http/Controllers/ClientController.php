@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function show(Client $client)
+    public function show()
     {
-        // dd($client);
-        return view('clients.show', [
-            'client' => $client
-        ]);
+        $clients = Client::all();
+        // dd($clients);
+        return view('clients.show', compact('clients'));
     }
 }
