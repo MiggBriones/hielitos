@@ -21,7 +21,7 @@
                         <td class="px-6 py-3">{{$client->id}}</td>
                         <td class="px-6 py-3">{{$client->name}}</td>
                         <td class="px-6 py-3">{{$client->last_name}}</td>
-                        <td class="px-6 py-3">{{$client->get_status->description}}</td>
+                        <td class="px-6 py-3">{{$client->getStatus->description}}</td>
                     </tr>
                 @endforeach
             </tbody>

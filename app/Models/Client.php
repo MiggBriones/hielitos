@@ -19,7 +19,7 @@ class Client extends Model
         'updated_at'
     ];
 
-    public function get_status()    
+    public function getStatus()    
     {
         return $this->belongsTo(StatusClient::class, 'id_client_status', 'id');
     }

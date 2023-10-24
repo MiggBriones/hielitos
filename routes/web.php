@@ -33,4 +33,4 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/muro', [PostController::class, 'index'])->name('posts.index');
 
-Route::get('/client', [ClientController::class, 'show'])->name('client');
+Route::get('/client', [ClientController::class, 'index'])->name('client');

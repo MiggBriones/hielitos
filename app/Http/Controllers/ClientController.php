@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {   
-    public function show()
+    public function index()
     {
         # $clients = Client::all();
-        $clients = Client::with('get_status')->get();
-        $status_client = StatusClient::with('clients')->get();
-        return view('clients.show', compact('clients', 'status_client'));
+        $clients = Client::with('getStatus')->get();
+        $clientStatus = StatusClient::with('clients')->get();
+        return view('clients.show', compact('clients', 'clientStatus'));
     }
 }
