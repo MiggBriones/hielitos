@@ -4,23 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\StatusClient;
 
-class Client extends Model
+class StatusClient extends Model
 {
     use HasFactory;
+    
+    protected $table = 'status_client';
 
     protected $fillable = [
         'id',
-        'name',
-        'last_name',
-        'id_client_status',
+        'description',
         'created_at',
         'updated_at'
     ];
 
-    public function get_status()    
+    public function clients()
     {
-        return $this->belongsTo(StatusClient::class, 'id_client_status', 'id');
+        return $this->hasMany(Client::class, 'id_client_status', 'id');
     }
 }
