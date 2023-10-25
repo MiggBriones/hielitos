@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -36,3 +37,5 @@ Route::get('/muro', [PostController::class, 'index'])->name('posts.index');
 Route::get('/client', [ClientController::class, 'index'])->name('client');
 Route::get('/client/create', [ClientController::class, 'create'])->name('clients.create');
 Route::post('/client', [ClientController::class, 'store']);
+
+Route::get('/product', [ProductController::class, 'index'])->name('product');

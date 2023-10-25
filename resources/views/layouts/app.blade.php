@@ -25,6 +25,9 @@
                         <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="{{ route('client') }}">
                             Clientes
                         </a>
+                        <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="{{ route('product') }}">
+                            Productos
+                        </a>
                     </nav>    
 
                     <nav class="flex gap-2 items-center">
