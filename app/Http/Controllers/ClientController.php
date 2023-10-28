@@ -22,7 +22,8 @@ class ClientController extends Controller
 
     public function create()
     {
-        return view('clients.create');
+        $clientStatus = StatusClient::with('clients')->get();
+        return view('clients.create', compact('clientStatus'));
     }
 
     public function store(Request $request)

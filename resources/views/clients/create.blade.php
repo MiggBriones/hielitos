@@ -60,9 +60,9 @@
                         value="{{ old('estatus') }}"
                         >
 
-                        <option value="1">Activo</option>
-                        <option value="2">Inactivo</option>
-                        <option value="3">Suspendido</option>
+                        @foreach ($clientStatus as $status)
+                            <option value="{{ $status->id }}">{{$status->description}}</option>    
+                        @endforeach
                       </select> 
 
                     @error('estatus')
