@@ -11,7 +11,7 @@
             <form action="{{ route('client') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
-                    <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="nombre" class="mb-2 block uppercase text-gray-500 font-bold">
                         Nombre
                     </label>
                     <input
@@ -30,7 +30,7 @@
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="last_name" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="apellido" class="mb-2 block uppercase text-gray-500 font-bold">
                         Apellido
                     </label>
                     <input
@@ -57,7 +57,7 @@
                         id="estatus"
                         name="estatus"
                         class="border p-3 w-full rounded-lg @error('estatus') border-red-500 @enderror"
-                        value="{{ old('id_client_status') }}"
+                        value="{{ old('estatus') }}"
                         >
 
                         <option value="1">Activo</option>
@@ -66,6 +66,106 @@
                       </select> 
 
                     @error('estatus')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="calle" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Calle
+                    </label>
+                    <input
+                        id="calle"
+                        name="calle"
+                        type="text"
+                        placeholder="Tu calle"
+                        class="border p-3 w-full rounded-lg @error('calle') border-red-500 @enderror"
+                        value="{{ old('calle') }}"
+                    />
+
+                    @error('calle')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="numero" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Número
+                    </label>
+                    <input
+                        id="numero"
+                        name="numero"
+                        type="text"
+                        placeholder="Tu número de casa"
+                        class="border p-3 w-full rounded-lg @error('numero') border-red-500 @enderror"
+                        value="{{ old('numero') }}"
+                    />
+
+                    @error('numero')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="codigoPostal" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Código postal
+                    </label>
+                    <input
+                        id="codigoPostal"
+                        name="codigoPostal"
+                        type="text"
+                        placeholder="Tu código postal"
+                        class="border p-3 w-full rounded-lg @error('codigoPostal') border-red-500 @enderror"
+                        value="{{ old('codigoPostal') }}"
+                    />
+
+                    @error('codigoPostal')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="longitud" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Longitud
+                    </label>
+                    <input
+                        id="longitud"
+                        name="longitud"
+                        type="text"
+                        placeholder="Tu longitud"
+                        class="border p-3 w-full rounded-lg @error('longitud') border-red-500 @enderror"
+                        value="{{ old('longitud') }}"
+                    />
+
+                    @error('longitud')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="latitud" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Latitud
+                    </label>
+                    <input
+                        id="latitud"
+                        name="latitud"
+                        type="text"
+                        placeholder="Tu latitud"
+                        class="border p-3 w-full rounded-lg @error('latitud') border-red-500 @enderror"
+                        value="{{ old('longitud') }}"
+                    />
+
+                    @error('latitud')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>

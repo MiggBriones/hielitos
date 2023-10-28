@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Client;
+use App\Models\Address;
 use App\Models\StatusClient;
 use Illuminate\Http\Request;
+use App\Models\ClientHasAddress;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {   
@@ -23,23 +27,46 @@ class ClientController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request);
+        // dd($request);
 
         // Validaciones en formularios
-        $this->validate($request, [
+        // TODO separar estatus del cliente y de la dirección.
+        $this->validate($request, [ 
             'nombre' => 'required|min:5|max:55',
             'apellido' => 'max:55',
-            'estatus' => 'required'
+            'calle' => 'required|min:10|max:255',
+            'numero' => 'required|min:1|max:10',
+            'codigoPostal' => 'required|min:3|max:5',
+            'longitud' => 'max:15',
+            'latitud' => 'max:15',
+            'estatus' => 'required|max:1'
         ]);
 
-        Client::create([
-            'name' => $request->nombre,
-            'last_name' => $request->apellido,
-            'id_client_status' => $request->estatus
-        ]);
+        return DB::transaction(function () use($request) {
+            $client = Client::create([
+                'name' => $request->nombre,
+                'last_name' => $request->apellido,
+                'id_client_status' => $request->estatus
+            ]);
 
-        // Redireccionar
-        return redirect()->route('client');
+            $address = Address::create([
+                'street' => $request->calle,
+                'number' => $request->numero,
+                'zip_code' => $request->codigoPostal,
+                'longitude' => $request->longitud,
+                'latitude' => $request->latitud,
+                'status' => $request->estatus
+            ]);
+
+            ClientHasAddress::create([
+                'id_client' =>  $client->id,
+                'id_address' => $address->id,
+                'created_at' => Carbon::now()
+            ]);
+
+            // Redireccionar
+            return redirect()->route('client');
+        });
     }
        
 }
