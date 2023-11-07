@@ -20,15 +20,107 @@
                         type="text"
                         placeholder="Número de serie"
                         class="border p-3 w-full rounded-lg @error('numeroSerie') border-red-500 @enderror"
-                        value="{{ old('nombre') }}"
+                        value="{{ old('numeroSerie') }}"
                     />
                     
-                    @error('nombre')
+                    @error('numeroSerie')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>
                     @enderror
                 </div>
+
+                <div class="mb-5">
+                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Descripción
+                    </label>
+                    <input
+                        id="descripcion"
+                        name="descripcion"
+                        type="text"
+                        placeholder="Descripcion del producto"
+                        class="border p-3 w-full rounded-lg @error('descripcion') border-red-500 @enderror"
+                        value="{{ old('descripcion') }}"
+                    />
+                    
+                    @error('descripcion')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="numeroPuertas" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Número de puertas
+                    </label>
+                    <input
+                        id="numeroPuertas"
+                        name="numeroPuertas"
+                        type="number"
+                        min="1"
+                        placeholder="Número de puertas"
+                        class="border p-3 w-full rounded-lg @error('numeroPuertas') border-red-500 @enderror"
+                        value="{{ old('numeroPuertas') }}"
+                    />
+                    
+                    @error('numeroPuertas')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="tipoPuertas" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Tipo de puertas
+                    </label>
+                    <input
+                        id="tipoPuertas"
+                        name="tipoPuertas"
+                        type="text"
+                        placeholder="Tipo de puertas"
+                        class="border p-3 w-full rounded-lg @error('tipoPuertas') border-red-500 @enderror"
+                        value="{{ old('tipoPuertas') }}"
+                    />
+                    
+                    @error('tipoPuertas')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="marca" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Marca
+                    </label>
+                    <select
+                        id="marca"
+                        name="marca"
+                        class="border p-3 w-full rounded-lg @error('marca') border-red-500 @enderror"
+                        value="{{ old('marca') }}"
+                        >
+
+                        @foreach ($productBrand as $brand)
+                            <option value="{{ $brand->id }}">{{$brand->description}}</option>    
+                        @endforeach
+                      </select> 
+
+                    @error('estatus')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <input
+                    type="submit"
+                    value="Crear producto"
+                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
+                >
+
+
             </form>
         </div>
     </div>

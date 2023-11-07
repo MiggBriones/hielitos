@@ -21,6 +21,7 @@
                     <th class="px-6 py-4"># serie</th>
                     <th class="px-6 py-4">Descripción</th>
                     <th class="px-6 py-4"># puertas</th>
+                    <th class="px-6 py-4">Marca</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +31,7 @@
                         <td class="px-6 py-3">{{$product->serial_number}}</td>
                         <td class="px-6 py-3">{{$product->description}}</td>
                         <td class="px-6 py-3">{{$product->doors_num}}</td>
+                        <td class="px-6 py-3">{{$product->getBrand->description}}</td>
                     </tr>
                 @endforeach
             </tbody>
