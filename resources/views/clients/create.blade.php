@@ -162,7 +162,7 @@
                         type="text"
                         placeholder="Tu latitud"
                         class="border p-3 w-full rounded-lg @error('latitud') border-red-500 @enderror"
-                        value="{{ old('longitud') }}"
+                        value="{{ old('latitud') }}"
                     />
 
                     @error('latitud')
