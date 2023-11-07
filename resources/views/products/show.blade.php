@@ -31,7 +31,7 @@
                         <td class="px-6 py-3">{{$product->serial_number}}</td>
                         <td class="px-6 py-3">{{$product->description}}</td>
                         <td class="px-6 py-3">{{$product->doors_num}}</td>
-                        <td class="px-6 py-3">{{$product->getBrand->description}}</td>
+                        <td class="px-6 py-3">{{$product->getProductWithBrand->description}}</td>
                     </tr>
                 @endforeach
             </tbody>
