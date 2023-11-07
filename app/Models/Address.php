@@ -19,6 +19,7 @@ class Address extends Model
         'longitude',
         'latitude',
         'status',
+        'id_client',
         'created_at',
         'updated_At'
     ];

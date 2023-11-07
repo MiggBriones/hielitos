@@ -7,7 +7,6 @@ use App\Models\Client;
 use App\Models\Address;
 use App\Models\StatusClient;
 use Illuminate\Http\Request;
-use App\Models\ClientHasAddress;
 use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
@@ -56,13 +55,8 @@ class ClientController extends Controller
                 'zip_code' => $request->codigoPostal,
                 'longitude' => $request->longitud,
                 'latitude' => $request->latitud,
-                'status' => $request->estatus
-            ]);
-
-            ClientHasAddress::create([
-                'id_client' =>  $client->id,
-                'id_address' => $address->id,
-                'created_at' => Carbon::now()
+                'status' => 1, /* Cuando se dá de alta la direccion por defecto */
+                'id_client' => $client->id
             ]);
 
             // Redireccionar
