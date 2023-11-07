@@ -29,4 +29,19 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class, 'id_brand', 'id');
     }
+
+    public function getProductWithCapacity()
+    {
+        return $this->belongsTo(Capacity::class, 'id_capacity', 'id');
+    }
+
+    public function getProductWithColor()
+    {
+        return $this->belongsTo(Color::class, 'id_color', 'id');
+    }
+
+    public function getProductWithEngineSize()
+    {
+        return $this->belongsTo(EngineSize::class, 'id_engine_size', 'id');
+    }
 }

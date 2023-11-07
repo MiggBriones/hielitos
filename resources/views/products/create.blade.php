@@ -107,7 +107,76 @@
                         @endforeach
                       </select> 
 
-                    @error('estatus')
+                    @error('marca')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="capacidad" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Capacidad
+                    </label>
+                    <select
+                        id="capacidad"
+                        name="capacidad"
+                        class="border p-3 w-full rounded-lg @error('capacidad') border-red-500 @enderror"
+                        value="{{ old('capacidad') }}"
+                        >
+
+                        @foreach ($productCapacity as $capacity)
+                            <option value="{{ $capacity->id }}">{{$capacity->capacity}}</option>    
+                        @endforeach
+                      </select> 
+
+                    @error('capacidad')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="color" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Color
+                    </label>
+                    <select
+                        id="color"
+                        name="color"
+                        class="border p-3 w-full rounded-lg @error('color') border-red-500 @enderror"
+                        value="{{ old('color') }}"
+                        >
+
+                        @foreach ($productColor as $color)
+                            <option value="{{ $color->id }}">{{$color->description}}</option>    
+                        @endforeach
+                      </select> 
+
+                    @error('color')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="engineSize" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Tamaño de motor
+                    </label>
+                    <select
+                        id="engineSize"
+                        name="engineSize"
+                        class="border p-3 w-full rounded-lg @error('engineSize') border-red-500 @enderror"
+                        value="{{ old('engineSize') }}"
+                        >
+
+                        @foreach ($productEngineSize as $engineSize)
+                            <option value="{{ $engineSize->id }}">{{$engineSize->size}}</option>    
+                        @endforeach
+                      </select> 
+
+                    @error('engineSize')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>
