@@ -22,6 +22,10 @@
                     <th class="px-6 py-4">Descripción</th>
                     <th class="px-6 py-4"># puertas</th>
                     <th class="px-6 py-4">Marca</th>
+                    <th class="px-6 py-4">Capacidad</th>
+                    <th class="px-6 py-4">Color</th>
+                    <th class="px-6 py-4">Motor</th>
+                    <th class="px-6 py-4">Gas</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +36,10 @@
                         <td class="px-6 py-3">{{$product->description}}</td>
                         <td class="px-6 py-3">{{$product->doors_num}}</td>
                         <td class="px-6 py-3">{{$product->getProductWithBrand->description}}</td>
+                        <td class="px-6 py-3">{{$product->getProductWithCapacity->capacity}}</td>
+                        <td class="px-6 py-3">{{$product->getProductWithColor->description}}</td>
+                        <td class="px-6 py-3">{{$product->getProductWithEngineSize->size}}</td>
+                        <td class="px-6 py-3">{{$product->getProductWithGasType->description}}</td>
                     </tr>
                 @endforeach
             </tbody>
