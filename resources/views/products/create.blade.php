@@ -58,7 +58,9 @@
                         id="numeroPuertas"
                         name="numeroPuertas"
                         type="number"
+                        onKeyDown="return false"
                         min="1"
+                        max="2"
                         placeholder="Número de puertas"
                         class="border p-3 w-full rounded-lg @error('numeroPuertas') border-red-500 @enderror"
                         value="{{ old('numeroPuertas') }}"
@@ -75,14 +77,16 @@
                     <label for="tipoPuertas" class="mb-2 block uppercase text-gray-500 font-bold">
                         Tipo de puertas
                     </label>
-                    <input
+                    <select
                         id="tipoPuertas"
                         name="tipoPuertas"
-                        type="text"
-                        placeholder="Tipo de puertas"
                         class="border p-3 w-full rounded-lg @error('tipoPuertas') border-red-500 @enderror"
                         value="{{ old('tipoPuertas') }}"
-                    />
+                        >
+
+                        <option value="Lamina">Lamina</option>
+                        <option value="Vidrio">Vidrio</option>
+                      </select> 
                     
                     @error('tipoPuertas')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -177,6 +181,29 @@
                       </select> 
 
                     @error('engineSize')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="gasType" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Tipo de gas
+                    </label>
+                    <select
+                        id="gasType"
+                        name="gasType"
+                        class="border p-3 w-full rounded-lg @error('gasType') border-red-500 @enderror"
+                        value="{{ old('gasType') }}"
+                        >
+
+                        @foreach ($productGasType as $gasType)
+                            <option value="{{ $gasType->id }}">{{$gasType->description}}</option>    
+                        @endforeach
+                      </select> 
+
+                    @error('gasType')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>

@@ -44,4 +44,9 @@ class Product extends Model
     {
         return $this->belongsTo(EngineSize::class, 'id_engine_size', 'id');
     }
+
+    public function getProductWithGasType()
+    {
+        return $this->belongsTo(GasType::class, 'id_gas_type', 'id');
+    }
 }

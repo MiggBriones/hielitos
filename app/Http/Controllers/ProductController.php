@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Color;
+use App\Models\GasType;
 use App\Models\Product;
 use App\Models\Capacity;
 use App\Models\EngineSize;
@@ -25,8 +26,13 @@ class ProductController extends Controller
         $productCapacity = Capacity::with('getCapacityWithProducts')->get();
         $productColor = Color::with('getColorWithProducts')->get();
         $productEngineSize = EngineSize::with('getEngineSizeWithProducts')->get();
+        $productGasType = GasType::with('getGasTypeWithProducts')->get();
 
-        return view('products.create', compact('productBrand', 'productCapacity','productColor', 'productEngineSize'));
+        return view('products.create', compact (
+                'productBrand', 'productCapacity'
+                ,'productColor', 'productEngineSize'
+                ,'productGasType'
+        ));
     }
 
 }
