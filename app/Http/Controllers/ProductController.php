@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Color;
+use App\Models\Client;
 use App\Models\GasType;
 use App\Models\Product;
 use App\Models\Capacity;
@@ -21,6 +22,7 @@ class ProductController extends Controller
 
     public function create()
     {
+        $productClient = Client::all();
         $productBrand = Brand::with('getBrandWithProducts')->get();
         $productCapacity = Capacity::with('getCapacityWithProducts')->get();
         $productColor = Color::with('getColorWithProducts')->get();
@@ -28,9 +30,8 @@ class ProductController extends Controller
         $productGasType = GasType::with('getGasTypeWithProducts')->get();
 
         return view('products.create', compact (
-                'productBrand', 'productCapacity'
-                ,'productColor', 'productEngineSize'
-                ,'productGasType'
+                'productClient','productBrand', 'productCapacity'
+                ,'productColor', 'productEngineSize','productGasType'
         ));
     }
 
@@ -42,7 +43,7 @@ class ProductController extends Controller
             'descripcion' => 'required|max:155',
             'numeroPuertas' => 'required|numeric',
             'tipoPuertas' => 'required|min:5|max:15',
-            // 'idCliente' => 'required|numeric',
+            'idCliente' => 'numeric',
             'marca' => 'required|numeric',
             'capacidad' => 'required|numeric',
             'color' => 'required|numeric',
@@ -55,7 +56,7 @@ class ProductController extends Controller
             'description' => $request->descripcion,
             'doors_num' => $request->numeroPuertas,
             'door_type' => $request->tipoPuertas,
-            // 'id_client' => $request->idCliente,
+            'id_client' => $request->idCliente,
             'id_brand' => $request->marca,
             'id_capacity' => $request->capacidad,
             'id_color' => $request->color,

@@ -96,6 +96,29 @@
                 </div>
 
                 <div class="mb-5">
+                    <label for="idCliente" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Clientes
+                    </label>
+                    <select
+                        id="idCliente"
+                        name="idCliente"
+                        class="border p-3 w-full rounded-lg @error('idCliente') border-red-500 @enderror"
+                        value="{{ old('idCliente') }}"
+                        >
+
+                        @foreach ($productClient as $client)
+                            <option value="{{ $client->id }}">{{ $client->name . "  " . $client->last_name }}</option>    
+                        @endforeach
+                      </select> 
+                    
+                    @error('idCliente')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
                     <label for="marca" class="mb-2 block uppercase text-gray-500 font-bold">
                         Marca
                     </label>
