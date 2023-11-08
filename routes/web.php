@@ -40,3 +40,4 @@ Route::post('/client', [ClientController::class, 'store']);
 
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/product/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/product', [ProductController::class, 'store']);

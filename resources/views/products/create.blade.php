@@ -165,14 +165,14 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="engineSize" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="tamanioMotor" class="mb-2 block uppercase text-gray-500 font-bold">
                         Tamaño de motor
                     </label>
                     <select
-                        id="engineSize"
-                        name="engineSize"
-                        class="border p-3 w-full rounded-lg @error('engineSize') border-red-500 @enderror"
-                        value="{{ old('engineSize') }}"
+                        id="tamanioMotor"
+                        name="tamanioMotor"
+                        class="border p-3 w-full rounded-lg @error('tamanioMotor') border-red-500 @enderror"
+                        value="{{ old('tamanioMotor') }}"
                         >
 
                         @foreach ($productEngineSize as $engineSize)
@@ -180,7 +180,7 @@
                         @endforeach
                       </select> 
 
-                    @error('engineSize')
+                    @error('tamanioMotor')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>
@@ -188,14 +188,14 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="gasType" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="tipoDeGas" class="mb-2 block uppercase text-gray-500 font-bold">
                         Tipo de gas
                     </label>
                     <select
-                        id="gasType"
-                        name="gasType"
-                        class="border p-3 w-full rounded-lg @error('gasType') border-red-500 @enderror"
-                        value="{{ old('gasType') }}"
+                        id="tipoDeGas"
+                        name="tipoDeGas"
+                        class="border p-3 w-full rounded-lg @error('tipoDeGas') border-red-500 @enderror"
+                        value="{{ old('tipoDeGas') }}"
                         >
 
                         @foreach ($productGasType as $gasType)
@@ -203,7 +203,7 @@
                         @endforeach
                       </select> 
 
-                    @error('gasType')
+                    @error('tipoDeGas')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>
