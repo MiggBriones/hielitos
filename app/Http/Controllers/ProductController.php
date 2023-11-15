@@ -41,20 +41,6 @@ class ProductController extends Controller
         ));
     }
 
-    public function edit(Product $product)
-    {
-        $clients = Client::all();
-        $brands = Brand::with('getBrandWithProducts')->get();
-        $capacities = Capacity::with('getCapacityWithProducts')->get();
-        $colors = Color::with('getColorWithProducts')->get();
-        $enginesSize = EngineSize::with('getEngineSizeWithProducts')->get();
-        $gasesType = GasType::with('getGasTypeWithProducts')->get();
-
-        return view('products.edit', compact('product', 'clients', 'brands'
-                    , 'capacities', 'colors', 'enginesSize', 'gasesType'
-        ));
-    }
-
     public function store(Request $request)
     {
         // TODO revisar asignación de cliente
@@ -89,4 +75,52 @@ class ProductController extends Controller
         return redirect()->route('product');
     }
 
+    public function edit(Product $product)
+    {
+        $clients = Client::all();
+        $brands = Brand::with('getBrandWithProducts')->get();
+        $capacities = Capacity::with('getCapacityWithProducts')->get();
+        $colors = Color::with('getColorWithProducts')->get();
+        $enginesSize = EngineSize::with('getEngineSizeWithProducts')->get();
+        $gasesType = GasType::with('getGasTypeWithProducts')->get();
+
+        return view('products.edit', compact('product', 'clients', 'brands'
+                    , 'capacities', 'colors', 'enginesSize', 'gasesType'
+        ));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [ 
+            'numeroSerie' => 'required|min:5|max:20',
+            'descripcion' => 'required|max:155',
+            'numeroPuertas' => 'required|numeric',
+            'tipoPuertas' => 'required|min:5|max:15',
+            'idCliente' => 'numeric',
+            'marca' => 'required|numeric',
+            'capacidad' => 'required|numeric',
+            'color' => 'required|numeric',
+            'tamanioMotor' => 'required|numeric',
+            'tipoDeGas' => 'required|numeric'
+        ]);
+
+        $product = Product::find($id);
+
+        $product->serial_number = $request->numeroSerie;
+        $product->description = $request->descripcion;
+        $product->doors_num = $request->numeroPuertas;
+        $product->door_type = $request->tipoPuertas;
+        $product->id_client = $request->idCliente;
+        $product->id_brand = $request->marca;
+        $product->id_capacity = $request->capacidad;
+        $product->id_color = $request->color;
+        $product->id_engine_size = $request->tamanioMotor;
+        $product->id_gas_type = $request->tipoDeGas;
+
+        $product->update();
+        
+        // Redireccionar
+        return redirect()->route('product');
+
+    }
 }

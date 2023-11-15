@@ -8,8 +8,8 @@
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
             <!-- NOTA: La opción novalidate, desactiva las validaciones del explorador con HTML5 -->
-            <form action="#" method="POST" novalidate>
-                @csrf
+            <form action="{{ route('products.update', $product->id) }}" method="POST" novalidate>
+                @csrf @method('PATCH')
                 <div class="mb-5">
                     <label for="numeroSerie" class="mb-2 block uppercase text-gray-500 font-bold">
                         numero de serie
