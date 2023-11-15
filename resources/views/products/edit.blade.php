@@ -30,6 +30,76 @@
                     @enderror
                 </div>
 
+                <div class="mb-5">
+                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Descripción
+                    </label>
+                    <input
+                        id="descripcion"
+                        name="descripcion"
+                        type="text"
+                        placeholder="Descripcion del producto"
+                        class="border p-3 w-full rounded-lg @error('descripcion') border-red-500 @enderror"
+                        value="{{ old('descripcion', $product->description) }}"
+                    />
+                    
+                    @error('descripcion')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="numeroPuertas" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Número de puertas
+                    </label>
+                    <input
+                        id="numeroPuertas"
+                        name="numeroPuertas"
+                        type="number"
+                        onKeyDown="return false"
+                        min="1"
+                        max="2"
+                        placeholder="Número de puertas"
+                        class="border p-3 w-full rounded-lg @error('numeroPuertas') border-red-500 @enderror"
+                        value="{{ old('numeroPuertas', $product->doors_num) }}"
+                    />
+                    
+                    @error('numeroPuertas')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="tipoPuertas" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Tipo de puertas
+                    </label>
+                    <select
+                        id="tipoPuertas"
+                        name="tipoPuertas"
+                        class="border p-3 w-full rounded-lg @error('tipoPuertas') border-red-500 @enderror"
+                        >
+
+                        <option 
+                            value="{{ $product->door_type }}">
+                            {{ $product->door_type}}
+                        </option>
+                        <option 
+                            value="{{ $product->door_type == 'Vidrio' ? 'Lamina' : 'Vidrio' }}">
+                            {{ $product->door_type == 'Vidrio' ? 'Lamina' : 'Vidrio' }}
+                        </option>
+                      </select> 
+                    
+                    @error('tipoPuertas')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
                 <input
                     type="submit"
                     value="Editar producto"
