@@ -41,6 +41,11 @@ class ProductController extends Controller
         ));
     }
 
+    public function edit(Product $product)
+    {
+        return view('products.edit', compact('product'));
+    }
+
     public function store(Request $request)
     {
         // TODO revisar asignación de cliente
