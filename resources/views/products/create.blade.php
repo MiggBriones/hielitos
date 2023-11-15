@@ -81,12 +81,11 @@
                         id="tipoPuertas"
                         name="tipoPuertas"
                         class="border p-3 w-full rounded-lg @error('tipoPuertas') border-red-500 @enderror"
-                        value="{{ old('tipoPuertas') }}"
-                        >
+                    >
 
-                        <option value="Lamina">Lamina</option>
-                        <option value="Vidrio">Vidrio</option>
-                      </select> 
+                        <option value="Lamina"  {{ old('tipoPuertas') == 'Lamina' ? "selected" : "" }} >Lamina</option>
+                        <option value="Vidrio"  {{ old('tipoPuertas') == 'Vidrio' ? "selected" : "" }} >Vidrio</option>
+                    </select> 
                     
                     @error('tipoPuertas')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -103,13 +102,17 @@
                         id="idCliente"
                         name="idCliente"
                         class="border p-3 w-full rounded-lg @error('idCliente') border-red-500 @enderror"
-                        value="{{ old('idCliente') }}"
-                        >
+                    >
 
                         @foreach ($productClient as $client)
-                            <option value="{{ $client->id }}">{{ $client->name . "  " . $client->last_name }}</option>    
+                            <option
+                                value="{{ $client->id }}"
+                                {{ old('idCliente') == $client->id ? "selected" : ""  }}
+                            >
+                                {{ $client->name . "  " . $client->last_name }}
+                            </option>    
                         @endforeach
-                      </select> 
+                    </select> 
                     
                     @error('idCliente')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -126,13 +129,17 @@
                         id="marca"
                         name="marca"
                         class="border p-3 w-full rounded-lg @error('marca') border-red-500 @enderror"
-                        value="{{ old('marca') }}"
-                        >
+                    >
 
                         @foreach ($productBrand as $brand)
-                            <option value="{{ $brand->id }}">{{$brand->description}}</option>    
+                            <option
+                                value="{{ $brand->id }}"
+                                {{ old('marca') == $brand->id ? "selected" : ""  }}
+                            >
+                                {{$brand->description}}
+                            </option>
                         @endforeach
-                      </select> 
+                    </select> 
 
                     @error('marca')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -149,11 +156,15 @@
                         id="capacidad"
                         name="capacidad"
                         class="border p-3 w-full rounded-lg @error('capacidad') border-red-500 @enderror"
-                        value="{{ old('capacidad') }}"
-                        >
+                    >
 
                         @foreach ($productCapacity as $capacity)
-                            <option value="{{ $capacity->id }}">{{$capacity->capacity}}</option>    
+                            <option
+                                value="{{ $capacity->id }}"
+                                {{ old('capacidad') == $capacity->id ? "selected" : ""  }}
+                            >
+                                {{$capacity->capacity}}
+                            </option>
                         @endforeach
                       </select> 
 
@@ -172,13 +183,17 @@
                         id="color"
                         name="color"
                         class="border p-3 w-full rounded-lg @error('color') border-red-500 @enderror"
-                        value="{{ old('color') }}"
-                        >
+                    >
 
                         @foreach ($productColor as $color)
-                            <option value="{{ $color->id }}">{{$color->description}}</option>    
+                            <option
+                                value="{{ $color->id }}"
+                                {{ old('color') == $color->id ? "selected" : ""  }}
+                            >
+                                {{$color->description}}
+                            </option>    
                         @endforeach
-                      </select> 
+                    </select> 
 
                     @error('color')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -196,12 +211,17 @@
                         name="tamanioMotor"
                         class="border p-3 w-full rounded-lg @error('tamanioMotor') border-red-500 @enderror"
                         value="{{ old('tamanioMotor') }}"
-                        >
+                    >
 
                         @foreach ($productEngineSize as $engineSize)
-                            <option value="{{ $engineSize->id }}">{{$engineSize->size}}</option>    
+                            <option
+                                value="{{ $engineSize->id }}"
+                                {{ old('tamanioMotor') == $engineSize->id ? "selected" : ""  }}
+                            >
+                                {{$engineSize->size}}
+                            </option>
                         @endforeach
-                      </select> 
+                    </select> 
 
                     @error('tamanioMotor')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -218,13 +238,17 @@
                         id="tipoDeGas"
                         name="tipoDeGas"
                         class="border p-3 w-full rounded-lg @error('tipoDeGas') border-red-500 @enderror"
-                        value="{{ old('tipoDeGas') }}"
-                        >
+                    >
 
                         @foreach ($productGasType as $gasType)
-                            <option value="{{ $gasType->id }}">{{$gasType->description}}</option>    
+                            <option
+                                value="{{ $gasType->id }}"
+                                {{ old('tipoDeGas') == $gasType->id ? "selected" : ""  }}
+                            >
+                                {{$gasType->description}}
+                            </option>
                         @endforeach
-                      </select> 
+                    </select> 
 
                     @error('tipoDeGas')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -243,4 +267,4 @@
             </form>
         </div>
     </div>
-    @endsection
+@endsection
