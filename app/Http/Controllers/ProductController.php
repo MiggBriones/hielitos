@@ -43,7 +43,16 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        $clients = Client::all();
+        $brands = Brand::with('getBrandWithProducts')->get();
+        $capacities = Capacity::with('getCapacityWithProducts')->get();
+        $colors = Color::with('getColorWithProducts')->get();
+        $enginesSize = EngineSize::with('getEngineSizeWithProducts')->get();
+        $gasesType = GasType::with('getGasTypeWithProducts')->get();
+
+        return view('products.edit', compact('product', 'clients', 'brands'
+                    , 'capacities', 'colors', 'enginesSize', 'gasesType'
+        ));
     }
 
     public function store(Request $request)
