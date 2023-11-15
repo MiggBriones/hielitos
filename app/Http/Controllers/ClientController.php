@@ -10,7 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
-{   
+{
+    // NOTE: Para tener acceso al controlador, protegemos de que el usuario debe estár autenticado
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+   
     public function index()
     {
         # $clients = Client::all();

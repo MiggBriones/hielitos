@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class AddressController extends Controller
 {
+    // NOTE: Para tener acceso al controlador, protegemos de que el usuario debe estár autenticado
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function storeUserWithAddress(Request $request)
     {
         //dd($request);

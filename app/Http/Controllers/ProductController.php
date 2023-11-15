@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    // NOTE: Para tener acceso al controlador, protegemos de que el usuario debe estár autenticado
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $products = Product::get();

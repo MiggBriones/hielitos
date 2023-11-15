@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    //
+    // NOTE: Para tener acceso al controlador, protegemos de que el usuario debe estár autenticado
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('auth.register');
