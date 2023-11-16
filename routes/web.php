@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MaintenanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,5 @@ Route::get('/product/create', [ProductController::class, 'create'])->name('produ
 Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
 Route::post('/product', [ProductController::class, 'store']);
 Route::patch('/product/{product}/update', [ProductController::class, 'update'])->name('products.update');
+
+Route::get('/maintenance', [MaintenanceController::class, 'index'])->name('maintenance');
