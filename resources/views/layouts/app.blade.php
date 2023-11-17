@@ -3,10 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+        @stack('styles')
+        <!-- <link href="css/app.css" rel="stylesheet"> -->
         <title>Hielitos - @yield('titulo')</title>
-        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
         @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
     </head>
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">

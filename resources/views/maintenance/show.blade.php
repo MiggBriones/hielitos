@@ -4,12 +4,28 @@
     Mantenimiento
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+@endpush
+
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
+        <div class="md:w-6/12 p-5">
+            <form
+                action="{{ route('images.store') }}"
+                method="POST"
+                enctype="multipart/form-data"
+                id="dropzone"
+                class="dropzone border-dashed border-2 
+                w-full h-96 rounded flex flex-col justify-center items-center"
+            >
+                @csrf
+            </form>
+        </div>
+
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
             <!-- NOTA: La opción novalidate, desactiva las validaciones del explorador con HTML5 -->
             <form action="#" method="POST" novalidate>
-                @csrf
                 <div class="mb-5">
                     <label for="idCliente" class="mb-2 block uppercase text-gray-500 font-bold">
                         Cliente

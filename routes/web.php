@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
@@ -46,3 +47,5 @@ Route::post('/product', [ProductController::class, 'store']);
 Route::patch('/product/{product}/update', [ProductController::class, 'update'])->name('products.update');
 
 Route::get('/maintenance', [MaintenanceController::class, 'index'])->name('maintenance');
+
+Route::post('/images', [ImageController::class, 'store'])->name('images.store');;
