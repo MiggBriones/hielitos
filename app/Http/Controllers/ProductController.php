@@ -43,7 +43,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        // TODO revisar asignación de cliente
+
         $this->validate($request, [ 
             'numeroSerie' => 'required|min:5|max:20',
             'descripcion' => 'required|max:155',
