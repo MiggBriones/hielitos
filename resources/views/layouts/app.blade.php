@@ -33,9 +33,6 @@
                         <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="{{ route('maintenance') }}">
                             Mantenimiento
                         </a>
-                        <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="#">
-                            Tickets
-                        </a>
                     </nav>    
 
                     <nav class="flex gap-2 items-center">

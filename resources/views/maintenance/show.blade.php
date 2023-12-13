@@ -9,148 +9,44 @@
 @endpush
 
 @section('contenido')
-    <div class="md:flex md:justify-center md:gap-10 md:items-center">
-        <div class="md:w-6/12 p-5">
-            <form
-                action="{{ route('images.store') }}"
-                method="POST"
-                enctype="multipart/form-data"
-                id="dropzone"
-                class="dropzone border-dashed border-2 
-                w-full h-96 rounded flex flex-col justify-center items-center"
-            >
-                @csrf
-            </form>
-        </div>
+<div class="grid place-items-center">    
+    <table class="text-sm text-left text-gray-500 dark:text-gray-400">
+        <caption class="text-left">
+            <a href="{{ route('maintenance.create') }}" class="p-4 inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </a>
+        </caption>
 
-        <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
-            <!-- NOTA: La opción novalidate, desactiva las validaciones del explorador con HTML5 -->
-            <form action="{{ route('maintenance.store') }}" method="POST" novalidate>
-                @csrf
-                <div class="mb-5">
-                    <label for="idCliente" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Cliente
-                    </label>
-                    <select
-                        id="idCliente"
-                        name="idCliente"
-                        class="border p-3 w-full rounded-lg @error('idCliente') border-red-500 @enderror"
-                    >
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th class="px-6 py-4">Id</th>
+                <th class="px-6 py-4">Observaciones</th>
+                <th class="px-6 py-4">Producto</th>
+                <th class="px-6 py-4">Estatus</th>
+                <th class="px-6 py-4">Editar</th>
+            </tr>
+        </thead>
 
-                        @foreach ($clients as $client)
-                            <option
-                                value="{{ $client->id }}"
-                                {{ old('idCliente') == $client->id ? "selected" : ""  }}
-                            >
-                                {{ $client->name . "  " . $client->last_name }}
-                            </option>    
-                        @endforeach
-                    </select> 
-                    
-                    @error('idCliente')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
-                            {{ $message }}
-                        </p>
-                    @enderror
-                </div>
+        <tbody>
+            @foreach ($maintenances as $maintenance)
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td class="px-6 py-3">{{$maintenance->id}}</td>
+                    <td class="px-6 py-3">{{$maintenance->observation}}</td>
+                    <td class="px-6 py-3">{{$maintenance->id_product}}</td>
+                    <td class="px-6 py-3">{{$maintenance->id_status}}</td>
+                    <td class="px-6 py-3">
+                        <a href="#" >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
 
-                <div class="mb-5">
-                    <label for="idProducto" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Producto
-                    </label>
-                    <select
-                        id="idProducto"
-                        name="idProducto"
-                        class="border p-3 w-full rounded-lg @error('idProducto') border-red-500 @enderror"
-                    >
-
-                    </select> 
-                    
-                    @error('idProducto')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
-                            {{ $message }}
-                        </p>
-                    @enderror
-                </div>
-
-                <div class="mb-5">
-                    <label for="observacion" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Observaciones
-                    </label>
-                    <textarea
-                        id="observacion"
-                        name="observacion"
-                        rows="4" 
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border
-                            border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
-                            dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                            dark:focus:border-blue-500"
-                        placeholder="Tus observaciones aquí...">
-
-                    </textarea>
-                    
-                    @error('observacion')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
-                            {{ $message }}
-                        </p>
-                    @enderror
-                </div>
-                
-                <!-- NOTA: Para que la imagen retenga su valor anterior en caso de
-                            que el usuario de submit.
-                            La configuración del name está en resources/js/app.js
-                -->
-                <div class="mb-5">
-                    <input 
-                        name="imagen"
-                        type="hidden"
-                        value="{{ old('imagen') }}"
-                    />
-                    @error('imagen')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }} </p>
-                    @enderror
-                </div>
-
-                <input
-                    type="submit"
-                    value="Crear mantenimiento"
-                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
-                >
-
-
-            </form>
-        </div>
-    </div>
-    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
-        
-    <script>
-        $(document).ready(function () {
-            console.log('Loading...');
-
-            $('#idCliente').on('change', function () {
-                console.log('Changing...');
-                let id = $(this).val();
-                $('#idProducto').empty();
-                $('#idProducto').append(`<option value="0" disabled selected>Procesando...</option>`);
-                $.ajax({
-                    type: 'GET',
-                    url: 'maintenance/' + id,
-                    success: function (response) {
-                        var response = JSON.parse(response);
-                        /* console.log(response);   */
-                        $('#idProducto').empty();
-                        $('#idProducto').append(`<option value="0" disabled selected>Seleccionar productos*</option>`);
-                        response.forEach(product => {
-                            $('#idProducto').append(`<option
-                                value="${product['id']}"
-                                >
-                                    ${product['description']}
-                                </option>`
-                            );
-                        });
-                    }
-                });
-            });
-    });
-    </script>
+    </table>
+</div>
 @endsection

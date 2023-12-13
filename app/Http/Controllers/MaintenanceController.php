@@ -19,10 +19,15 @@ class MaintenanceController extends Controller
 
     public function index()
     {
-        $clients = Client::all();
-        $products = Product::all();
+        $maintenances = Maintenance::all();
 
-        return view('maintenance.show', compact('clients', 'products'));
+        return view('maintenance.show', compact('maintenances'));
+    }
+
+    public function create() {
+        $clients = Client::all();
+
+        return view('maintenance.create', compact('clients'));
     }
 
     public function GetProductsByClient($idClient) {

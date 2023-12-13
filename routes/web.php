@@ -47,7 +47,8 @@ Route::post('/product', [ProductController::class, 'store']);
 Route::patch('/product/{product}/update', [ProductController::class, 'update'])->name('products.update');
 
 Route::get('/maintenance', [MaintenanceController::class, 'index'])->name('maintenance');
+Route::get('/maintenance/create', [MaintenanceController::class, 'create'])->name('maintenance.create');
 Route::get('/maintenance/{idClient}', [MaintenanceController::class, 'GetProductsByClient'])->name('maintenance.GetProductsByClient');
-Route::post('/maintenance', [MaintenanceController::class, 'store'])->name('maintenance.store');;
+Route::post('/maintenance', [MaintenanceController::class, 'store'])->name('maintenance.store');
 
-Route::post('/images', [ImageController::class, 'store'])->name('images.store');;
+Route::post('/images', [ImageController::class, 'store'])->name('images.store');
