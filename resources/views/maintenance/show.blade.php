@@ -34,8 +34,8 @@
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td class="px-6 py-3">{{$maintenance->id}}</td>
                     <td class="px-6 py-3">{{$maintenance->observation}}</td>
-                    <td class="px-6 py-3">{{$maintenance->id_product}}</td>
-                    <td class="px-6 py-3">{{$maintenance->id_status}}</td>
+                    <td class="px-6 py-3">{{$maintenance->id_products}}</td>
+                    <td class="px-6 py-3">{{$maintenance->id_status_maintenance}}</td>
                     <td class="px-6 py-3">
                         <a href="#" >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
