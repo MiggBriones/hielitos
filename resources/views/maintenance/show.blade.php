@@ -64,14 +64,6 @@
                         class="border p-3 w-full rounded-lg @error('idProducto') border-red-500 @enderror"
                     >
 
-                        @foreach ($products as $product)
-                            <option
-                                value="{{ $product->id }}"
-                                {{ old('idProducto') == $product->id ? "selected" : ""  }}
-                            >
-                                {{ $product->serial_number . " - " . $product->description }}
-                            </option>    
-                        @endforeach
                     </select> 
                     
                     @error('idProducto')
@@ -129,4 +121,36 @@
             </form>
         </div>
     </div>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+        
+    <script>
+        $(document).ready(function () {
+            console.log('Loading...');
+
+            $('#idCliente').on('change', function () {
+                console.log('Changing...');
+                let id = $(this).val();
+                $('#idProducto').empty();
+                $('#idProducto').append(`<option value="0" disabled selected>Procesando...</option>`);
+                $.ajax({
+                    type: 'GET',
+                    url: 'maintenance/' + id,
+                    success: function (response) {
+                        var response = JSON.parse(response);
+                        /* console.log(response);   */
+                        $('#idProducto').empty();
+                        $('#idProducto').append(`<option value="0" disabled selected>Seleccionar productos*</option>`);
+                        response.forEach(product => {
+                            $('#idProducto').append(`<option
+                                value="${product['id']}"
+                                >
+                                    ${product['description']}
+                                </option>`
+                            );
+                        });
+                    }
+                });
+            });
+    });
+    </script>
 @endsection

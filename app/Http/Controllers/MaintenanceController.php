@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Product;
 use App\Models\Maintenance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class MaintenanceController extends Controller
@@ -22,6 +23,10 @@ class MaintenanceController extends Controller
         $products = Product::all();
 
         return view('maintenance.show', compact('clients', 'products'));
+    }
+
+    public function GetProductsByClient($idClient) {
+        echo json_encode(DB::table('products')->where('id_client', $idClient)->get());
     }
 
     public function store(Request $request)
