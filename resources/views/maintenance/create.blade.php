@@ -132,9 +132,15 @@
                 let id = $(this).val();
                 $('#idProducto').empty();
                 $('#idProducto').append(`<option value="0" disabled selected>Procesando...</option>`);
+                /*
+                    NOTA: En el parametro url se quita la ruta, ya que al cambiar la vista de SHOW a CREATE
+                    por defecto apunta a la ruta: maintenance
+
+                    Únicamente pasamos el id.
+                */
                 $.ajax({
                     type: 'GET',
-                    url: 'maintenance/' + id,
+                    url: id,
                     success: function (response) {
                         var response = JSON.parse(response);
                         /* console.log(response);   */
