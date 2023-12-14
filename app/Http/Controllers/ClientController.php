@@ -21,8 +21,7 @@ class ClientController extends Controller
     {
         # $clients = Client::all();
         $clients = Client::with('getStatus')->get();
-        $clientStatus = StatusClient::with('clients')->get();
-        return view('clients.show', compact('clients', 'clientStatus'));
+        return view('clients.show', compact('clients'));
     }
 
     public function create()
