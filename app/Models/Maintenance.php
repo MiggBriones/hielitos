@@ -21,4 +21,9 @@ class Maintenance extends Model
         'updated_at'
     ];
 
+    public function getStatus()    
+    {
+        return $this->belongsTo(StatusMaintenance::class, 'id_status_maintenance', 'id');
+    }
+
 }

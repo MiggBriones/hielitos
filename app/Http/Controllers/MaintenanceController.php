@@ -19,7 +19,7 @@ class MaintenanceController extends Controller
 
     public function index()
     {
-        $maintenances = Maintenance::all();
+        $maintenances = Maintenance::with('getStatus')->get();
 
         return view('maintenance.show', compact('maintenances'));
     }
