@@ -26,4 +26,9 @@ class Maintenance extends Model
         return $this->belongsTo(StatusMaintenance::class, 'id_status_maintenance', 'id');
     }
 
+    public function getProduct()    
+    {
+        return $this->belongsTo(Product::class, 'id_products', 'id');
+    }
+
 }

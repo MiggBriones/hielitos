@@ -49,4 +49,9 @@ class Product extends Model
     {
         return $this->belongsTo(GasType::class, 'id_gas_type', 'id');
     }
+
+    public function maintenances()
+    {
+        return $this->hasMany(Maintenance::class, 'id_products', 'id');
+    }
 }
