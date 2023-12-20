@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Product;
 use App\Models\Maintenance;
 use Illuminate\Http\Request;
+use App\Models\StatusMaintenance;
 use Illuminate\Support\Facades\DB;
 
 
@@ -27,8 +28,9 @@ class MaintenanceController extends Controller
 
     public function create() {
         $clients = Client::all();
+        $maintenanceStatus = StatusMaintenance::with('maintenances')->get();
 
-        return view('maintenance.create', compact('clients'));
+        return view('maintenance.create', compact('clients', 'maintenanceStatus'));
     }
 
     public function GetProductsByClient($idClient) {
@@ -39,18 +41,19 @@ class MaintenanceController extends Controller
     {
         $this->validate($request, [ 
             'idCliente' => 'required|numeric',
-            'observacion' => 'required|min:5|max:255',
+            'observacion' => 'required|min:5|max:1500',
             'imagen' => 'min:5',
-            'idProducto' => 'required|numeric'
+            'idProducto' => 'required|numeric',
+            'estatus' => 'required|numeric'
         ]);
 
         $imagenPath = public_path('uploads') . '\\' . $request->imagen;
 
         Maintenance::create([
             'observation' => $request->observacion,
-            'imagen' => $imagenPath,
+            'image' => $imagenPath,
             'id_products' => $request->idProducto,
-            'id_status_maintenance' => 1
+            'id_status_maintenance' => $request->estatus
         ]);
 
         // Redireccionar

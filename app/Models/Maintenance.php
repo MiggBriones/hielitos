@@ -14,7 +14,7 @@ class Maintenance extends Model
     protected $fillable = [
         'id',
         'observation',
-        'imagen',
+        'image',
         'id_products',
         'id_status_maintenance',
         'created_at',

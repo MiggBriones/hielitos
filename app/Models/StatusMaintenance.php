@@ -17,4 +17,10 @@ class StatusMaintenance extends Model
         'created_at',
         'updated_at'
     ];
+    
+    public function maintenances()
+    {
+        return $this->hasMany(Maintenance::class, 'id_status_maintenance', 'id');
+    }
+
 }
