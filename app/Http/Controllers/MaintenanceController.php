@@ -69,7 +69,18 @@ class MaintenanceController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request);
+        $this->validate($request, [ 
+            'estatus' => 'required|numeric'
+        ]);
+
+        $maintenance = Maintenance::find($id);
+
+        $maintenance->id_status_maintenance = $request->estatus;
+
+        $maintenance->update();
+        
+        // Redireccionar
+        return redirect()->route('maintenance');
     }
 
 }
