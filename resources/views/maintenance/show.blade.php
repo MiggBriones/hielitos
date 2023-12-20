@@ -25,6 +25,7 @@
                 <th class="px-6 py-4">Producto</th>
                 <th class="px-6 py-4">Marca</th>
                 <th class="px-6 py-4">Estatus</th>
+                <th class="px-6 py-4">Fecha</th>
                 <th class="px-6 py-4">Editar</th>
             </tr>
         </thead>
@@ -36,6 +37,7 @@
                     <td class="px-6 py-3">{{$maintenance->getProduct->description}}</td>
                     <td class="px-6 py-3">{{$maintenance->getProduct->getProductWithBrand->description}}</td>
                     <td class="px-6 py-3">{{$maintenance->getStatus->description}}</td>
+                    <td class="px-6 py-3">{{ $maintenance->created_at->format('Y-m-d') }}</td>
                     <td class="px-6 py-3">
                         <a href="#" >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
