@@ -60,4 +60,16 @@ class MaintenanceController extends Controller
         return redirect()->route('maintenance');
     }
 
+    public function edit(Maintenance $maintenance)
+    {
+        $maintenanceStatus = StatusMaintenance::with('maintenances')->get();
+
+        return view('maintenance.edit', compact('maintenance', 'maintenanceStatus'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        dd($request);
+    }
+
 }
