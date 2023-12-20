@@ -22,7 +22,12 @@
                         >
 
                         @foreach ($maintenanceStatus as $status)
-                            <option value="{{ $status->id }}">{{$status->description}}</option>    
+                            <option
+                                value="{{ $status->id }}"
+                                {{ old('estatus', $maintenance->id_status_maintenance) == $status->id ? "selected" : ""  }}
+                            >
+                                {{$status->description}}
+                            </option>
                         @endforeach
                       </select> 
 
