@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\App;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ImageController;
@@ -57,9 +57,8 @@ Route::patch('/maintenance/{maintenance}/update', [MaintenanceController::class,
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
 
 Route::get('/report', function() {
-    $pdf = App::make('dompdf.wrapper');
 
-    $pdf->loadHTML('<h1>Hola Mundo </h1>');
+    $pdf = PDF::loadView('reports.maintenance.tickets');
     
     return $pdf->stream();
 });
