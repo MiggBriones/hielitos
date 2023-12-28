@@ -6,6 +6,10 @@
 
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
+        <div class="md:w-6/12 p-5">
+            <img src="{{ asset('uploads') .'/'. $maintenance->image }}" alt="Producto">
+        </div>
+
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
             <!-- NOTA: La opción novalidate, desactiva las validaciones del explorador con HTML5 -->
             <form action="{{ route('maintenance.update', $maintenance->id) }}" method="POST" novalidate>
