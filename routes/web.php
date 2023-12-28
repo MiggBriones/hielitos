@@ -1,6 +1,5 @@
 <?php
 
-use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ImageController;
@@ -53,12 +52,6 @@ Route::get('/maintenance/{maintenance}/edit', [MaintenanceController::class, 'ed
 Route::get('/maintenance/{idClient}', [MaintenanceController::class, 'GetProductsByClient'])->name('maintenance.GetProductsByClient');
 Route::post('/maintenance', [MaintenanceController::class, 'store'])->name('maintenance.store');
 Route::patch('/maintenance/{maintenance}/update', [MaintenanceController::class, 'update'])->name('maintenance.update');
+Route::get('/maintenance/{maintenance}/report', [MaintenanceController::class, 'report'])->name('maintenance.report');
 
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
-
-Route::get('/report', function() {
-
-    $pdf = PDF::loadView('reports.maintenance.tickets');
-    
-    return $pdf->stream();
-});

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use App\Models\Client;
 use App\Models\Product;
 use App\Models\Maintenance;
@@ -83,6 +84,24 @@ class MaintenanceController extends Controller
         
         // Redireccionar
         return redirect()->route('maintenance');
+    }
+
+    public function report(Maintenance $maintenance)
+    {
+        
+        $product = Product::find($maintenance->id_products);
+        $client = Client::find($product->id_client);
+        $maintenance = Maintenance::find($maintenance->id);
+        $maintenanceStatus = StatusMaintenance::with('maintenances')->get();
+        
+        // dd($product);
+
+
+        $pdf = PDF::loadView('reports.maintenance.tickets', compact(
+            'maintenance', 'product', 'client')
+        );
+    
+        return $pdf->stream();
     }
 
 }
