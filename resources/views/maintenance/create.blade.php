@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Mantenimiento
+    Agregar Mantenimiento
 @endsection
 
 @push('styles')
