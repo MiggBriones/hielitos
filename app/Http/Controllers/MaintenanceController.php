@@ -47,7 +47,7 @@ class MaintenanceController extends Controller
             'estatus' => 'required|numeric'
         ]);
 
-        $imagenPath = public_path('uploads') . '\\' . $request->imagen;
+        $imagenPath = $request->imagen;
 
         Maintenance::create([
             'observation' => $request->observacion,
