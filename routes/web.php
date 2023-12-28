@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
@@ -54,3 +55,11 @@ Route::post('/maintenance', [MaintenanceController::class, 'store'])->name('main
 Route::patch('/maintenance/{maintenance}/update', [MaintenanceController::class, 'update'])->name('maintenance.update');
 
 Route::post('/images', [ImageController::class, 'store'])->name('images.store');
+
+Route::get('/report', function() {
+    $pdf = App::make('dompdf.wrapper');
+
+    $pdf->loadHTML('<h1>Hola Mundo </h1>');
+    
+    return $pdf->stream();
+});
