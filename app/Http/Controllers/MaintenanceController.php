@@ -63,8 +63,10 @@ class MaintenanceController extends Controller
     public function edit(Maintenance $maintenance)
     {
         $maintenanceStatus = StatusMaintenance::with('maintenances')->get();
+        $product = Product::find($maintenance->id_products);
+        $client = Client::find($product->id_client);
 
-        return view('maintenance.edit', compact('maintenance', 'maintenanceStatus'));
+        return view('maintenance.edit', compact('maintenance', 'maintenanceStatus', 'client'));
     }
 
     public function update(Request $request, $id)

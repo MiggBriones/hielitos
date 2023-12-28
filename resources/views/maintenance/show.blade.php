@@ -22,6 +22,7 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th class="px-6 py-4">Id</th>
+                <th class="px-6 py-4"># serie</th>
                 <th class="px-6 py-4">Producto</th>
                 <th class="px-6 py-4">Marca</th>
                 <th class="px-6 py-4">Estatus</th>
@@ -34,6 +35,7 @@
             @foreach ($maintenances as $maintenance)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td class="px-6 py-3">{{$maintenance->id}}</td>
+                    <td class="px-6 py-3">{{$maintenance->getProduct->serial_number}}</td>
                     <td class="px-6 py-3">{{$maintenance->getProduct->description}}</td>
                     <td class="px-6 py-3">{{$maintenance->getProduct->getProductWithBrand->description}}</td>
                     <td class="px-6 py-3">{{$maintenance->getStatus->description}}</td>

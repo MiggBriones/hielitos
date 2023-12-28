@@ -11,6 +11,47 @@
             <form action="{{ route('maintenance.update', $maintenance->id) }}" method="POST" novalidate>
                 @csrf @method('PATCH')
                 <div class="mb-5">
+                    <label for="nombreCliente" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Cliente
+                    </label>
+                    <input
+                        id="nombreCliente"
+                        name="nombreCliente"
+                        type="text"
+                        class="border p-3 w-full rounded-lg bg-neutral-100 @error('nombreCliente') border-red-500 @enderror"
+                        value="{{  $client->name . " " . $client->last_name }}"
+                        readonly="readonly"
+                    />
+                    
+                    @error('numeroSerie')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <label for="numeroSerie" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Producto
+                    </label>
+                    <input
+                        id="numeroSerie"
+                        name="numeroSerie"
+                        type="text"
+                        class="border p-3 w-full rounded-lg bg-neutral-100 @error('numeroSerie') border-red-500 @enderror"
+                        value="{{ $maintenance->getProduct->serial_number }}"
+                        readonly="readonly"
+                    />
+                    
+                    @error('numeroSerie')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                </div>
+
+                
+                <div class="mb-5">
                     <label for="estatus" class="mb-2 block uppercase text-gray-500 font-bold">
                         Estatus
                     </label>
@@ -46,10 +87,8 @@
                         id="observacion"
                         name="observacion"
                         rows="12" 
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border
-                            border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
-                            dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                            dark:focus:border-blue-500"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-neutral-100 rounded-lg border
+                            border-gray-300"
                         readonly="readonly"
                     >
                     {{ $maintenance->observation }}
