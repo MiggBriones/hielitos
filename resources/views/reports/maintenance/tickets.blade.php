@@ -8,8 +8,10 @@
         <style>
            
            table {
-                margin: 1em;
+                background-color: green;
+                margin: 0;
                 padding: 0.2em;
+                width: 100%;
             }
 
             .encabezado {
@@ -33,8 +35,32 @@
             }
             
             tr td:first-child {
-                width: 100%;
                 background-color: #F1EDA5;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .footer {
+                position:absolute;
+                bottom:0;
+                width:100%;
+                text-align: center;
+            }
+
+            .alineacion {
+                text-align: left !important;
+                background-color: pink;
+                border: 1px solid black;                
+            }
+
+            .espacioButtom {
+                padding-bottom: 2em;
+            }
+            
+            .testElement {
+                text-align: left !important;
+                background-color: pink;
+                border: 1px solid black;
             }
 
         </style>
@@ -55,25 +81,23 @@
                 <table class="">                           
                     <tbody>
                         <tr class="">
-                            <td class=""></td>
-                            <td class="">REPORTE DE FALLA DEL CONSERVADOR</td>
-                            <td class=""></td>
+                            <td class="" colspan="8">REPORTE DE FALLA DEL CONSERVADOR</td>
                         </tr>
 
                         <tr class="">
-                            <td class="">Fecha</td>
-                            <td class="">Hora</td>
-                            <td class="">Cliente</td>
-                        </tr>
+                            <td class="alineacion" colspan="3">Fecha:</td>
+                            <td class="" colspan="2">Hora:</td>
+                            <td class="" colspan="3">Cliente: {{ $client->name ." ". $client->last_name }} </td>
+                        </tr> 
 
                         <tr class="">
-                            <td class="">Reporta</td>
-                            <td class="">Capacidad de conservador</td>
+                            <td class="alineacion" colspan="3">Reporta:</td>
+                            <td class="alineacion" colspan="3">Capacidad de conservador:</td>
                         </tr>
 
-                        <tr class="">
-                            <td class="">Nombre y firma de quien reporta</td>
-                            <td class="">Nombre y firma de quien recibe reporte</td>
+                        <tr>
+                            <td class="alineacion espacioButtom" colspan="3">Nombre y firma de quien reporta:</td>
+                            <td class="alineacion espacioButtom" colspan="3">Nombre y firma de quien recibe reporte:</td>
                         </tr>
                     </tbody>
                 </table>
@@ -83,19 +107,24 @@
                 <table class="">                
                     <tbody>
                         <tr class="">
-                            <td class="">Id</td>
-                            <td class=""># serie</td>
-                            <td class="">Producto</td>
-                            <td class="">Marca</td>
-                            <td class="">Fecha</td>
+                            <td class="" colspan="7">REPORTE DE MANTENIMIENTO DEL CONSERVADOR</td>
                         </tr>
-            
+
                         <tr class="">
-                            <td class="">{{$maintenance->id}}</td>
-                            <td class="">{{$product->serial_number}}</td>
-                            <td class="">{{$product->description}}</td>
-                            <td class="">{{$product->getProductWithBrand->description}}</td>
-                            <td class="">{{ $maintenance->created_at->format('Y-m-d') }}</td>
+                            <td class="alineacion" colspan="3">Fecha: {{ $maintenance->created_at->format('Y-m-d') }}</td>
+                            <td class="" colspan="2">Lugar:</td>
+                            <td class="" colspan="1">Hora inicial:</td>
+                            <td class="" colspan="1">Hora final:</td>
+                        </tr> 
+
+                        <tr class="">
+                            <td class="alineacion" colspan="3">Modelo:</td>
+                            <td class="alineacion" colspan="2">Capacidad:</td>
+                            <td class="alineacion" colspan="3">No. Serie:</td>
+                        </tr>
+
+                        <tr>
+                            <td class="alineacion espacioButtom" colspan="3">Nombre o razon social:</td>
                         </tr>
                     </tbody>
                 </table>
@@ -103,25 +132,84 @@
 
 
             <div class="funcionamiento">
-                <table class="">
-                    <tr class="">
-                        <td class="">FUNCIONAMIENTO</td>
-                    </tr>
-            
+                <table class="">            
                     <tbody>
                         <tr class="">
-                            <td class="">{{$maintenance->id}}</td>
-                            <td class="">{{$product->serial_number}}</td>
-                            <td class="">{{$product->description}}</td>
-                            <td class="">{{$product->getProductWithBrand->description}}</td>
-                            <td class="">{{ $maintenance->created_at->format('Y-m-d') }}</td>
+                            <td class="" colspan="20">FUNCIONAMIENTO DE PARTES</td>
                         </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Partes</td>
+                            <td class="alineacion" colspan="1">Capacidad</td>
+                            <td class="alineacion" colspan="1">Cambio</td>
+                            <td class="alineacion" colspan="1">Funciona</td>
+                            <td class="alineacion" colspan="1">Para y arranca</td>
+                            <td class="alineacion" colspan="1">Ruido normal</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Compresor</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Micromotor</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Relay</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Termico</td>
+                        </tr>
+   
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Capacitor</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Termostato</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Refrigerante</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Calcomanias/Logotipo</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Refacciones utilizadas</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Limpieza del conservador</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Condensador</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Puerta</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Trabajo realizado</td>
+                        </tr>
+
+                        <tr class="">
+                            <td class="alineacion" colspan="15">Observaciones</td>
+                        </tr>
+
+
                     </tbody>
                 </table>
             </div>
         </main>
-        <footer class="">
-            <h1>Hielitos - Todos los derechos reservados {{ now()->year }} </h1>
+        <footer class="footer">
+            <h2>Hielitos - Todos los derechos reservados {{ now()->year }} </h2>
         </footer>
     </body>
 </html>
