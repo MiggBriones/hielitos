@@ -16,7 +16,7 @@
 
             .encabezado {
                 text-align: center;
-                background-color: #F58585;
+                /* background-color: #F58585; */
             }
 
             .falla {
@@ -49,8 +49,9 @@
 
             .alineacion {
                 text-align: left !important;
+                /* Testing purpose */
                 background-color: pink;
-                border: 1px solid black;                
+                border: 1px solid black;
             }
 
             .espacioButtom {
@@ -86,18 +87,18 @@
 
                         <tr class="">
                             <td class="alineacion" colspan="3">Fecha:</td>
-                            <td class="" colspan="2">Hora:</td>
-                            <td class="" colspan="3">Cliente: {{ $client->name ." ". $client->last_name }} </td>
+                            <td class="alineacion" colspan="2">Hora:</td>
+                            <td class="alineacion" colspan="3">Cliente: {{ $client->name ." ". $client->last_name }} </td>
                         </tr> 
 
                         <tr class="">
                             <td class="alineacion" colspan="3">Reporta:</td>
-                            <td class="alineacion" colspan="3">Capacidad de conservador:</td>
+                            <td class="alineacion" colspan="5">Capacidad de conservador:</td>
                         </tr>
 
                         <tr>
                             <td class="alineacion espacioButtom" colspan="3">Nombre y firma de quien reporta:</td>
-                            <td class="alineacion espacioButtom" colspan="3">Nombre y firma de quien recibe reporte:</td>
+                            <td class="alineacion espacioButtom" colspan="5">Nombre y firma de quien recibe reporte:</td>
                         </tr>
                     </tbody>
                 </table>
@@ -112,9 +113,9 @@
 
                         <tr class="">
                             <td class="alineacion" colspan="3">Fecha: {{ $maintenance->created_at->format('Y-m-d') }}</td>
-                            <td class="" colspan="2">Lugar:</td>
-                            <td class="" colspan="1">Hora inicial:</td>
-                            <td class="" colspan="1">Hora final:</td>
+                            <td class="alineacion" colspan="2">Lugar:</td>
+                            <td class="alineacion" colspan="1">Hora inicial:</td>
+                            <td class="alineacion" colspan="1">Hora final:</td>
                         </tr> 
 
                         <tr class="">
@@ -124,7 +125,7 @@
                         </tr>
 
                         <tr>
-                            <td class="alineacion espacioButtom" colspan="3">Nombre o razon social:</td>
+                            <td class="alineacion espacioButtom" colspan="7">Nombre o razon social:</td>
                         </tr>
                     </tbody>
                 </table>
