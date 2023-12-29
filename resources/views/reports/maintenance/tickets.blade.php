@@ -136,72 +136,96 @@
                 <table class="">            
                     <tbody>
                         <tr class="">
-                            <td class="" colspan="20">FUNCIONAMIENTO DE PARTES</td>
+                            <td class="" colspan="22">FUNCIONAMIENTO DE PARTES</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Partes</td>
+                            <td class="alineacion" colspan="14">Partes</td>
                             <td class="alineacion" colspan="1">Capacidad</td>
                             <td class="alineacion" colspan="1">Cambio</td>
-                            <td class="alineacion" colspan="1">Funciona</td>
-                            <td class="alineacion" colspan="1">Para y arranca</td>
-                            <td class="alineacion" colspan="1">Ruido normal</td>
+                            <td class="alineacion" colspan="2">
+                                Funciona
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Para y arranca
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Ruido normal
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Compresor</td>
+                            <td class="alineacion" colspan="14">Compresor</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Micromotor</td>
+                            <td class="alineacion" colspan="14">Micromotor</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Relay</td>
+                            <td class="alineacion" colspan="14">Relay</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Termico</td>
+                            <td class="alineacion" colspan="14">Termico</td>
                         </tr>
    
                         <tr class="">
-                            <td class="alineacion" colspan="15">Capacitor</td>
+                            <td class="alineacion" colspan="14">Capacitor</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Termostato</td>
+                            <td class="alineacion" colspan="14">Termostato</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Refrigerante</td>
+                            <td class="alineacion" colspan="14">Refrigerante</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Calcomanias/Logotipo</td>
+                            <td class="alineacion" colspan="14">Calcomanias/Logotipo</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Refacciones utilizadas</td>
+                            <td class="alineacion" colspan="14">Refacciones utilizadas</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Limpieza del conservador</td>
+                            <td class="alineacion" colspan="14">Limpieza del conservador</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Condensador</td>
+                            <td class="alineacion" colspan="14">Condensador</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Puerta</td>
+                            <td class="alineacion" colspan="14">Puerta</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Trabajo realizado</td>
+                            <td class="alineacion" colspan="14">Trabajo realizado</td>
                         </tr>
 
                         <tr class="">
-                            <td class="alineacion" colspan="15">Observaciones</td>
+                            <td class="alineacion" colspan="14">Observaciones</td>
                         </tr>
 
 
