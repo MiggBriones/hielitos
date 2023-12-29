@@ -9,14 +9,16 @@
            
            table {
                 background-color: green;
+                /*
                 margin: 0;
                 padding: 0.2em;
+                */
                 width: 100%;
             }
 
             .encabezado {
                 text-align: center;
-                /* background-color: #F58585; */
+                background-color: #F58585;
             }
 
             .falla {
@@ -55,7 +57,7 @@
             }
 
             .espacioButtom {
-                padding-bottom: 2em;
+                padding-bottom: 1em;
             }
             
             .testElement {
@@ -68,16 +70,12 @@
     </head>
     <body class="">
         <header class="encabezado">
-            <h1 class="">
+            <h2 class="">
                 HIELO Y FRIGORIFICO DE COATZACOALCOS S.A.
-            </h1>
+            </h2>
             <h3> REPORTE DE SERVICIO</h3>
         </header>
         <main class="">
-            <h2 class="">
-                @yield('titulo')
-            </h2>
-
             <div class="falla">
                 <table class="">                           
                     <tbody>
@@ -191,35 +189,217 @@
                         <tr class="">
                             <td class="alineacion" colspan="14">Capacitor</td>
                         </tr>
-
+                        
+                        <!-- Termostato -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Termostato</td>
-                        </tr>
+                            <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="2">
+                                Calibracion
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
 
+                            </td>
+                            <td class="alineacion" colspan="2"></td>
+                            <td class="alineacion" colspan="2"></td>
+                        </tr>
+                        
+                        <!-- Refrigerante -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Refrigerante</td>
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td class="alineacion">Tipo</td>
+                                        <td class="alineacion">Cantidad</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Cargo
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2"></td>
+                            <td class="alineacion" colspan="2"></td>
                         </tr>
-
+                        
+                        <!-- Calcomanias/Logotipo -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Calcomanias/Logotipo</td>
+                            <td class="alineacion" colspan="3">
+                                <table>
+                                    <tr>
+                                        <td class="alineacion">Izquierdo</td>
+                                        <td class="alineacion">Central</td>
+                                        <td class="alineacion">Derecho</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="2"></td>
+                            <td class="alineacion" colspan="2"></td>
                         </tr>
-
+                        
+                        <!-- Refacciones utilizadas -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Refacciones utilizadas</td>
+                            <td class="alineacion" colspan="1">
+                                Ventilador
+                                <table>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="1">
+                                Cable
+                                <table>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Clavija
+                                <table>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Aceite
+                                <table>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Otros
+                                <table>
+                                    <tr>
+                                        <td class="espacioButtom"></td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-
+                        
+                        <!-- Limpieza del conservador -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Limpieza del conservador</td>
+                            <td class="alineacion" colspan="1">
+                                Exterior
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="1">
+                                Interior
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Deshielo
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-
+                        
+                        <!-- Condensador -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Condensador</td>
+                            <td class="alineacion" colspan="1">
+                                Sopleteo
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="1">
+                                FOAM
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Cambio
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
 
+                        <!-- Puerta -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Puerta</td>
+                            <td class="alineacion" colspan="1">
+                                Sella hule
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="1">
+                                Cambio hule
+                                <table>
+                                    <tr>
+                                        <td>Si</td>
+                                        <td>No</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="alineacion" colspan="2">
+                                Bisagras
+                                <table>
+                                    <tr>
+                                        <td>Bien</td>
+                                        <td>Mal</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-
+x
                         <tr class="">
                             <td class="alineacion" colspan="14">Trabajo realizado</td>
                         </tr>
@@ -233,8 +413,10 @@
                 </table>
             </div>
         </main>
+        <!--
         <footer class="footer">
             <h2>Hielitos - Todos los derechos reservados {{ now()->year }} </h2>
         </footer>
+        -->
     </body>
 </html>
