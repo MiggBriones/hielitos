@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -23,6 +24,19 @@ return new class extends Migration
             $table->timestamps();
             $table->string('username')->unique();
         });
+
+    
+        // Insert some stuff
+        DB::table('users')->insert(
+            array(
+                'name' => 'Miguel Briones',
+                'email' => 'migg.briones@gmail.com',
+                'password' => '$2y$10$Uo2F2Or.oFrQEX3A3sGlCOkm5ddmNZKgCEm0yMWuAGEfiyKlg./JK',
+                'username'=> 'migbriones'
+            )
+        );
+        
+
     }
 
     /**
