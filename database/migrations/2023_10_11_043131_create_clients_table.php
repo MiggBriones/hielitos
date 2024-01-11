@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->string('name', 35);
-            $table->string('last_name', 35);
+            $table->string('name', 55)->nullable();
+            $table->string('last_name', 55)->nullable();
             $table->integer('id_client_status')->index('fk_clients_status_client_idx');
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();

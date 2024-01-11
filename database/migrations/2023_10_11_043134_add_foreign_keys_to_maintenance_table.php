@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('maintenance', function (Blueprint $table) {
-            $table->foreign(['id_destination_repair'], 'fk_maintenance_address1')->references(['id'])->on('address')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->foreign(['id_products'], 'fk_maintenance_products1')->references(['id'])->on('products')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->foreign(['id_status_maintenance'], 'fk_maintenance_status_maintenance1')->references(['id'])->on('status_maintenance')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
@@ -28,7 +27,6 @@ return new class extends Migration
     public function down()
     {
         Schema::table('maintenance', function (Blueprint $table) {
-            $table->dropForeign('fk_maintenance_address1');
             $table->dropForeign('fk_maintenance_products1');
             $table->dropForeign('fk_maintenance_status_maintenance1');
         });

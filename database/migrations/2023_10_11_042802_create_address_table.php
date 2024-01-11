@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('longitude', 15)->nullable();
             $table->string('latitude', 15)->nullable();
             $table->integer('status')->default(0);
+            $table->integer('id_client')->index('fk_address_clients1_idx');
             $table->timestamp('created_at');
             $table->timestamp('updated_At')->nullable();
         });
