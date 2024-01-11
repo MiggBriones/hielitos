@@ -22,14 +22,13 @@ return new class extends Migration
         });
 
         // Insertar lista de estatus
-        DB::table('status_client')->insert(
-            array([
-                    'description' => 'Activo',
-                    'description' => 'Inactivo',
-                    'description' => 'Suspendido'
-                ]
-            )
-        );
+        $data = [
+            ['description'=>'Activo'],
+            ['description'=>'Inactivo'],
+            ['description'=>'Suspendido']
+        ];
+
+        DB::table('status_client')->insert($data);
 
     }
 
