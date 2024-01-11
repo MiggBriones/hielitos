@@ -162,7 +162,7 @@
                     Únicamente pasamos el id.
                 */
                 $.ajax({
-                    type: 'GET',
+                    type: 'POST',
                     url: id,
                     success: function (response) {
                         var response = JSON.parse(response);
