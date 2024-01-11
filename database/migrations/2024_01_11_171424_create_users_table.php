@@ -26,7 +26,7 @@ return new class extends Migration
         });
 
     
-        // Insert some stuff
+        // Insertar usuario de prueba
         DB::table('users')->insert(
             array(
                 'name' => 'Miguel Briones',
