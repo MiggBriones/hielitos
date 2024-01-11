@@ -27,7 +27,7 @@ return new class extends Migration
             array(
                 'name' => 'Miguel Briones',
                 'email' => 'migg.briones@gmail.com',
-                'password' => '$2y$10$zlfTHYbWwX7NhX.WSZk/t.LCyyJOwI2FRYIK8P3qf89epDyUGQVku',
+                'password' => '$2y$10$Uo2F2Or.oFrQEX3A3sGlCOkm5ddmNZKgCEm0yMWuAGEfiyKlg./JK',
                 'username'=> 'migbriones'
             )
         );
