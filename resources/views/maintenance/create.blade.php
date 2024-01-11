@@ -164,6 +164,7 @@
                 $.ajax({
                     type: 'POST',
                     url: id,
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     success: function (response) {
                         var response = JSON.parse(response);
                         /* console.log(response);   */
