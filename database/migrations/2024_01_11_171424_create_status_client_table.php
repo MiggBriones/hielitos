@@ -23,9 +23,9 @@ return new class extends Migration
 
         // Insertar lista de estatus
         $data = [
-            ['description'=>'Activo'],
-            ['description'=>'Inactivo'],
-            ['description'=>'Suspendido']
+            ['description'=>'Activo', 'created_at' => '2023-10-18 02:01:46'],
+            ['description'=>'Inactivo', 'created_at' => '2023-10-18 02:01:46'],
+            ['description'=>'Suspendido', 'created_at' => '2023-10-18 02:01:46']
         ];
 
         DB::table('status_client')->insert($data);
