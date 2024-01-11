@@ -162,7 +162,7 @@
                     Únicamente pasamos el id.
                 */
                 $.ajax({
-                    type: 'POST',
+                    type: 'GET',
                     url: id,
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     success: function (response) {
