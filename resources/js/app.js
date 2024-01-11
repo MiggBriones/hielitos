@@ -35,8 +35,12 @@ const dropzone = new Dropzone('#dropzone', {
 });
 
 dropzone.on("success", function (file, response) {
-    // console.log(response.imagen);
+    console.log(response.imagen);
     document.querySelector('[name="imagen"]').value = response.imagen;
+});
+
+dropzone.on("error", function (file, response) {
+    console.log(response);
 });
 
 dropzone.on("removedfile", function () {
