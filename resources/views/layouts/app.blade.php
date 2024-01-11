@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @stack('styles')
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- <link href="css/app.css" rel="stylesheet"> -->
         <title>Hielitos - @yield('titulo')</title>
         <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-        @vite('resources/css/app.css')
-        @vite('resources/js/app.js')
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">
