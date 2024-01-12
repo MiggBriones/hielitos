@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -19,6 +20,16 @@ return new class extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
         });
+
+        // Insertar lista estatus del mantenimiento
+        $data = [
+            ['description'=>'Preventivo', 'created_at' => '023-10-18 02:01:46'],
+            ['description'=>'Correctivo', 'created_at' => '023-10-18 02:01:46'],
+            ['description'=>'Taller', 'created_at' => '023-10-18 02:01:46']
+        ];
+
+        DB::table('status_maintenance')->insert($data);
+
     }
 
     /**

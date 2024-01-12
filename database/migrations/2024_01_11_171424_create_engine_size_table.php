@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -19,6 +20,18 @@ return new class extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
         });
+
+        // Insertar lista de tamanio de motor de congelador
+        $data = [
+            ['description'=>'1/6', 'created_at' => '2023-10-30 22:01:46'],
+            ['description'=>'1/4', 'created_at' => '2023-10-30 22:01:46'],
+            ['description'=>'1/2', 'created_at' => '2023-10-30 22:01:46'],
+            ['description'=>'3/4', 'created_at' => '2023-10-30 22:01:46'],
+            ['description'=>'1 HP', 'created_at' => '2023-10-30 22:01:46']
+        ];
+
+        DB::table('engine_size')->insert($data);
+
     }
 
     /**

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -19,6 +20,16 @@ return new class extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
         });
+
+        // Insertar lista de colores de congelador
+        $data = [
+            ['description'=>'Blanco', 'created_at' => '2023-10-30 22:01:46'],
+            ['description'=>'Negro', 'created_at' => '2023-10-30 22:01:46'],
+            ['description'=>'Azul', 'created_at' => '2023-10-30 22:01:46']
+        ];
+
+        DB::table('color')->insert($data);
+
     }
 
     /**
