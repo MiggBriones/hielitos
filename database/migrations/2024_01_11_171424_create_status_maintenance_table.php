@@ -23,9 +23,9 @@ return new class extends Migration
 
         // Insertar lista estatus del mantenimiento
         $data = [
-            ['description'=>'Preventivo', 'created_at' => '023-10-18 02:01:46'],
-            ['description'=>'Correctivo', 'created_at' => '023-10-18 02:01:46'],
-            ['description'=>'Taller', 'created_at' => '023-10-18 02:01:46']
+            ['id' => 1, 'description'=>'Preventivo', 'created_at' => '023-10-18 02:01:46'],
+            ['id' => 2, 'description'=>'Correctivo', 'created_at' => '023-10-18 02:01:46'],
+            ['id' => 3, 'description'=>'Taller', 'created_at' => '023-10-18 02:01:46']
         ];
 
         DB::table('status_maintenance')->insert($data);
