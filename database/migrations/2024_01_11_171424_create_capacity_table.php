@@ -23,14 +23,14 @@ return new class extends Migration
 
         // Insertar lista de capacidad del congelador
         $data = [
-            ['description'=>'20', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'40', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'60', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'80', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'100', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'120', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'200', 'created_at' => '2023-10-30 22:01:46'],
-            ['description'=>'250', 'created_at' => '2023-10-30 22:01:46']
+            ['capacity'=>'20', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'40', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'60', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'80', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'100', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'120', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'200', 'created_at' => '2023-10-30 22:01:46'],
+            ['capacity'=>'250', 'created_at' => '2023-10-30 22:01:46']
         ];
 
         DB::table('capacity')->insert($data);
