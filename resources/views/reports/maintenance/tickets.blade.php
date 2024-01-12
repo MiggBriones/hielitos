@@ -136,7 +136,8 @@
                         <tr class="">
                             <td class="" colspan="22">FUNCIONAMIENTO DE PARTES</td>
                         </tr>
-
+                        
+                        <!-- Partes -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Partes</td>
                             <td class="alineacion" colspan="1">Capacidad</td>
@@ -169,25 +170,175 @@
                                 </table>
                             </td>
                         </tr>
-
+                        
+                        <!-- Compresor -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Compresor</td>
+                            <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="1"></td>
+                            <!-- Funciona -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Arranca -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Ruido -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
 
+                        <!-- Micromotor -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Micromotor</td>
+                            <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="1"></td>
+                            <!-- Funciona -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Arranca -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Ruido -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
 
+                        <!-- Relay -->                            
                         <tr class="">
                             <td class="alineacion" colspan="14">Relay</td>
+                            <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="1"></td>
+                            <!-- Funciona -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Arranca -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Ruido -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
 
+                        <!-- Termico -->  
                         <tr class="">
                             <td class="alineacion" colspan="14">Termico</td>
+                           <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="1"></td>
+                            <!-- Funciona -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Arranca -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Ruido -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-   
+
+                         <!-- Capacitor -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Capacitor</td>
+                           <td class="alineacion" colspan="1"></td>
+                            <td class="alineacion" colspan="1"></td>
+                            <!-- Funciona -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Arranca -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- Ruido -->
+                            <td class="alineacion" colspan="2">
+                                <table>
+                                    <tr>
+                                        <td>_</td>
+                                        <td>_</td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         
                         <!-- Termostato -->
@@ -334,6 +485,9 @@
                                     </tr>
                                 </table>
                             </td>
+                            <td class="alineacion" rowspan="3" colspan="4">
+                                Sello
+                            </td>
                         </tr>
                         
                         <!-- Condensador -->
@@ -399,11 +553,13 @@
                                 </table>
                             </td>
                         </tr>
-x
+
+                        <!-- Trabajo realizado -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Trabajo realizado</td>
                         </tr>
 
+                        <!-- Observaciones -->
                         <tr class="">
                             <td class="alineacion" colspan="14">Observaciones</td>
                         </tr>
