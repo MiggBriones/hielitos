@@ -6,7 +6,10 @@
         @stack('styles')
         <title>Mantenimientos</title>
         <style>
-           
+           body {
+                font-family: sans-serif;
+           }
+
            table {
                 /*background-color: green; */
                 /*
@@ -91,7 +94,7 @@
 
                         <tr class="">
                             <td class="alineacion" colspan="3">Reporta:</td>
-                            <td class="alineacion" colspan="5">Capacidad de conservador:</td>
+                            <td class="alineacion" colspan="5">Capacidad de conservador: {{$product->getProductWithCapacity->capacity}}</td>
                         </tr>
 
                         <tr>
@@ -118,8 +121,8 @@
 
                         <tr class="">
                             <td class="alineacion" colspan="3">Modelo:</td>
-                            <td class="alineacion" colspan="2">Capacidad:</td>
-                            <td class="alineacion" colspan="3">No. Serie:</td>
+                            <td class="alineacion" colspan="2">Capacidad: {{$product->getProductWithCapacity->capacity}}</td>
+                            <td class="alineacion" colspan="3">No. Serie: {{$product->serial_number}}</td>
                         </tr>
 
                         <tr>
@@ -563,7 +566,7 @@
                         <!-- Observaciones -->
                         <tr class="">
                             <td class="alineacion espacioButtom" colspan="14">Observaciones</td>
-                            <td class="alineacion espacioButtom" colspan="14"></td>
+                            <td class="alineacion espacioButtom" colspan="14">{{$maintenance->observation}}</td>
                         </tr>
 
 
