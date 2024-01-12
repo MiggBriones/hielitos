@@ -8,7 +8,7 @@
         <style>
            
            table {
-                background-color: green;
+                /*background-color: green; */
                 /*
                 margin: 0;
                 padding: 0.2em;
@@ -18,26 +18,26 @@
 
             .encabezado {
                 text-align: center;
-                background-color: #F58585;
+                /*background-color: #F58585; */
             }
 
             .falla {
                 text-align: center;
-                background-color: #B2F6D7;
+                /*background-color: #B2F6D7; */
             }
 
             .mantenimiento {
                 text-align: center;
-                background-color: #F58585;
+                /*background-color: #F58585; */
             }
 
             .funcionamiento {
                 text-align: center;
-                background-color: #F58585;
+                /*background-color: #F58585; */
             }
             
             tr td:first-child {
-                background-color: #F1EDA5;
+                /*background-color: #F1EDA5; */
                 margin: 0 auto;
                 text-align: center;
             }
@@ -52,7 +52,7 @@
             .alineacion {
                 text-align: left !important;
                 /* Testing purpose */
-                background-color: pink;
+                /*background-color: pink; */
                 border: 1px solid black;
             }
 
@@ -62,7 +62,7 @@
             
             .testElement {
                 text-align: left !important;
-                background-color: pink;
+                /*background-color: pink; */
                 border: 1px solid black;
             }
 
@@ -180,8 +180,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -189,8 +189,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -198,8 +198,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -214,8 +214,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -223,8 +223,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -232,8 +232,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -248,8 +248,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -257,8 +257,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -266,8 +266,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -282,8 +282,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -291,8 +291,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -300,8 +300,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -316,8 +316,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -325,8 +325,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -334,8 +334,8 @@
                             <td class="alineacion" colspan="2">
                                 <table>
                                     <tr>
-                                        <td>_</td>
-                                        <td>_</td>
+                                        <td class="espacioButtom"></td>
+                                        <td class="espacioButtom"></td>
                                     </tr>
                                 </table>
                             </td>
@@ -556,12 +556,14 @@
 
                         <!-- Trabajo realizado -->
                         <tr class="">
-                            <td class="alineacion" colspan="14">Trabajo realizado</td>
+                            <td class="alineacion espacioButtom" colspan="14">Trabajo realizado</td>
+                            <td class="alineacion espacioButtom" colspan="14"></td>
                         </tr>
 
                         <!-- Observaciones -->
                         <tr class="">
-                            <td class="alineacion" colspan="14">Observaciones</td>
+                            <td class="alineacion espacioButtom" colspan="14">Observaciones</td>
+                            <td class="alineacion espacioButtom" colspan="14"></td>
                         </tr>
 
 
