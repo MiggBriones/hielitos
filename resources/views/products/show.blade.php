@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Productos
+    Congeladores
 @endsection
 
 @section('contenido')
@@ -17,7 +17,6 @@
 
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th class="px-6 py-4">Id</th>
                     <th class="px-6 py-4"># serie</th>
                     <th class="px-6 py-4">Descripción</th>
                     <th class="px-6 py-4"># puertas</th>
@@ -32,7 +31,6 @@
             <tbody>
                 @foreach ($products as $product)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td class="px-6 py-3">{{$product->id}}</td>
                         <td class="px-6 py-3">{{$product->serial_number}}</td>
                         <td class="px-6 py-3">{{$product->description}}</td>
                         <td class="px-6 py-3">{{$product->doors_num}}</td>

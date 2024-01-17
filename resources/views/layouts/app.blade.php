@@ -28,7 +28,7 @@
                             Clientes
                         </a>
                         <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="{{ route('product') }}">
-                            Productos
+                            Congeladores
                         </a>
                         <a class="font-bold uppercase text-gray-600 text-sm ml-5" href="{{ route('maintenance') }}">
                             Mantenimiento

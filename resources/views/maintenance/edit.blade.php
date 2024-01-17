@@ -36,7 +36,7 @@
 
                 <div class="mb-5">
                     <label for="numeroSerie" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Producto
+                        Congelador
                     </label>
                     <input
                         id="numeroSerie"

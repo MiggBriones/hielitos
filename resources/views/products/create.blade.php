@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Agregar Producto
+    Agregar Congelador
 @endsection
 
 @section('contenido')
@@ -38,7 +38,7 @@
                         id="descripcion"
                         name="descripcion"
                         type="text"
-                        placeholder="Descripcion del producto"
+                        placeholder="Descripcion del congelador"
                         class="border p-3 w-full rounded-lg @error('descripcion') border-red-500 @enderror"
                         value="{{ old('descripcion') }}"
                     />
