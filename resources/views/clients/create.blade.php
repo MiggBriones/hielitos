@@ -18,7 +18,7 @@
                         id="nombre"
                         name="nombre"
                         type="text"
-                        placeholder="Tu nombre"
+                        placeholder="Nombre"
                         class="border p-3 w-full rounded-lg @error('nombre') border-red-500 @enderror"
                         value="{{ old('nombre') }}"
                     />
@@ -37,7 +37,7 @@
                         id="apellido"
                         name="apellido"
                         type="text"
-                        placeholder="Tu apellido"
+                        placeholder="Apellido"
                         class="border p-3 w-full rounded-lg @error('apellido') border-red-500 @enderror"
                         value="{{ old('apellido') }}"
                     />
@@ -80,7 +80,7 @@
                         id="calle"
                         name="calle"
                         type="text"
-                        placeholder="Tu calle"
+                        placeholder="Calle"
                         class="border p-3 w-full rounded-lg @error('calle') border-red-500 @enderror"
                         value="{{ old('calle') }}"
                     />
@@ -100,7 +100,7 @@
                         id="numero"
                         name="numero"
                         type="text"
-                        placeholder="Tu número de casa"
+                        placeholder="Número de casa"
                         class="border p-3 w-full rounded-lg @error('numero') border-red-500 @enderror"
                         value="{{ old('numero') }}"
                     />
@@ -120,7 +120,7 @@
                         id="codigoPostal"
                         name="codigoPostal"
                         type="text"
-                        placeholder="Tu código postal"
+                        placeholder="Código postal"
                         class="border p-3 w-full rounded-lg @error('codigoPostal') border-red-500 @enderror"
                         value="{{ old('codigoPostal') }}"
                     />
@@ -140,7 +140,7 @@
                         id="longitud"
                         name="longitud"
                         type="text"
-                        placeholder="Tu longitud"
+                        placeholder="Longitud"
                         class="border p-3 w-full rounded-lg @error('longitud') border-red-500 @enderror"
                         value="{{ old('longitud') }}"
                     />
@@ -160,7 +160,7 @@
                         id="latitud"
                         name="latitud"
                         type="text"
-                        placeholder="Tu latitud"
+                        placeholder="Latitud"
                         class="border p-3 w-full rounded-lg @error('latitud') border-red-500 @enderror"
                         value="{{ old('latitud') }}"
                     />

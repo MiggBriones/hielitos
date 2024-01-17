@@ -22,7 +22,7 @@
                         id="name"
                         name="name"
                         type="text"
-                        placeholder="Tu nombre"
+                        placeholder="Nombre"
                         class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
                         value="{{ old('name') }}"
                     />
@@ -41,7 +41,7 @@
                         id="username"
                         name="username"
                         type="text"
-                        placeholder="Tu nombre de usuario"
+                        placeholder="Nombre de usuario"
                         class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
                         value="{{ old('username') }}"
                     />
@@ -61,7 +61,7 @@
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="Tu email de registro"
+                        placeholder="Email de registro"
                         class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
                         value="{{ old('email') }}"
                     />
